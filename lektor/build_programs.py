@@ -173,7 +173,7 @@ class PageBuildProgram(BuildProgram):
 
     def build_artifact(self, artifact):
         try:
-            self.source.url_path.encode('ascii')
+            self.source.url_path.encode()
         except UnicodeError:
             raise BuildError('The URL for this record contains non ASCII '
                              'characters.  This is currently not supported '
